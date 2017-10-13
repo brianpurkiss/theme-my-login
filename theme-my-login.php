@@ -1,13 +1,13 @@
 <?php
 /*
-Plugin Name: Theme My Login
-Plugin URI: http://www.jfarthing.com/extend/wordpress-plugins/theme-my-login/
-Description: Themes the WordPress login, registration and forgot password pages according to your theme.
+Plugin Name: Bootstrap Theme My Login
+Plugin URI:
+Description: Themes the WordPress login, registration and forgot password pages according to your theme. Uses Bootstrap and no custom styles to reduce code bloat.
 Version: 6.4.9
-Author: Jeff Farthing
-Author URI: http://www.jfarthing.com
-Text Domain: theme-my-login
-Domain Path: /languages
+Author: Brian Purkiss
+Author URI: http://brianpurkiss.com
+
+Forked from plugin by Jeff Farthing
 */
 
 // Allow custom functions file

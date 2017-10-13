@@ -220,9 +220,9 @@ class Theme_My_Login_Template extends Theme_My_Login_Abstract {
 					}
 				}
 				if ( ! empty( $errors ) )
-					$output .= '<p class="error">' . apply_filters( 'login_errors', $errors ) . "</p>\n";
+					$output .= '<div class="alert alert-danger" role="alert">' . apply_filters( 'login_errors', $errors ) . "</div>\n";
 				if ( ! empty( $messages ) )
-					$output .= '<p class="message">' . apply_filters( 'login_messages', $messages ) . "</p>\n";
+					$output .= '<div class="alert alert-info" role="alert">' . apply_filters( 'login_messages', $messages ) . "</div>\n";
 			}
 		}
 		return $output;
@@ -326,7 +326,7 @@ class Theme_My_Login_Template extends Theme_My_Login_Abstract {
 	 */
 	public function the_action_links( $args = '' ) {
 		if ( $action_links = $this->get_action_links( $args ) ) {
-			echo '<ul class="tml-action-links">' . "\n";
+			echo '<ul class="tml-action-links list-unstyled">' . "\n";
 			foreach ( (array) $action_links as $link ) {
 				echo '<li><a href="' . esc_url( $link['url'] ) . '" rel="nofollow">' . esc_html( $link['title'] ) . '</a></li>' . "\n";
 			}
@@ -362,7 +362,7 @@ class Theme_My_Login_Template extends Theme_My_Login_Abstract {
 	 * @access public
 	 */
 	public function the_user_links() {
-		echo '<ul class="tml-user-links">';
+		echo '<ul class="tml-user-links list-unstyled">';
 		foreach ( (array) self::get_user_links() as $link ) {
 			echo '<li><a href="' . esc_url( $link['url'] ) . '">' . esc_html( $link['title'] ) . '</a></li>' . "\n";
 		}
@@ -423,7 +423,7 @@ class Theme_My_Login_Template extends Theme_My_Login_Abstract {
 	 * @param string $before_message Text/HTML to add before the message
 	 * @param string $after_message Text/HTML to add after the message
 	 */
-	public function the_action_template_message( $action = 'login', $before_message = '<p class="message">', $after_message = '</p>' ) {
+	public function the_action_template_message( $action = 'login', $before_message = '<div class="alert alert-info" role="alert">', $after_message = '</div>' ) {
 		if ( $message = self::get_action_template_message( $action ) )
 			echo $before_message . $message . $after_message;
 	}
@@ -591,4 +591,3 @@ class Theme_My_Login_Template extends Theme_My_Login_Abstract {
 	}
 }
 endif; // Class exists
-

@@ -4,7 +4,7 @@ If you would like to edit this file, copy it to your current theme's directory a
 Theme My Login will always look in your theme's directory first, before using this default template.
 */
 ?>
-<div class="tml tml-profile" id="theme-my-login<?php $template->the_instance(); ?>">
+<div class="bthm tml-profile" id="theme-my-login<?php $template->the_instance(); ?>">
 	<?php $template->the_action_template_message( 'profile' ); ?>
 	<?php $template->the_errors(); ?>
 	<form id="your-profile" action="<?php $template->the_action_url( 'profile', 'login_post' ); ?>" method="post">
@@ -16,9 +16,9 @@ Theme My Login will always look in your theme's directory first, before using th
 		<?php if ( apply_filters( 'show_admin_bar', true ) || has_action( 'personal_options' ) ) : ?>
 			<h3><?php _e( 'Personal Options', 'theme-my-login' ); ?></h3>
 
-			<table class="tml-form-table">
+			<table class="bthm-form-table">
 			<?php if ( apply_filters( 'show_admin_bar', true ) ) : ?>
-				<tr class="tml-user-admin-bar-front-wrap">
+				<tr class="bthm-user-admin-bar-front-wrap">
 					<th><label for="admin_bar_front"><?php _e( 'Toolbar', 'theme-my-login' )?></label></th>
 					<td>
 						<label for="admin_bar_front"><input type="checkbox" name="admin_bar_front" id="admin_bar_front" value="1"<?php checked( _get_admin_bar_pref( 'front', $profileuser->ID ) ); ?> />
@@ -34,28 +34,28 @@ Theme My Login will always look in your theme's directory first, before using th
 
 		<h3><?php _e( 'Name', 'theme-my-login' ); ?></h3>
 
-		<table class="tml-form-table">
-		<tr class="tml-user-login-wrap">
+		<table class="bthm-form-table">
+		<tr class="bthm-user-login-wrap">
 			<th><label for="user_login"><?php _e( 'Username', 'theme-my-login' ); ?></label></th>
 			<td><input type="text" name="user_login" id="user_login" value="<?php echo esc_attr( $profileuser->user_login ); ?>" disabled="disabled" class="regular-text" /> <span class="description"><?php _e( 'Usernames cannot be changed.', 'theme-my-login' ); ?></span></td>
 		</tr>
 
-		<tr class="tml-first-name-wrap">
+		<tr class="bthm-first-name-wrap">
 			<th><label for="first_name"><?php _e( 'First Name', 'theme-my-login' ); ?></label></th>
 			<td><input type="text" name="first_name" id="first_name" value="<?php echo esc_attr( $profileuser->first_name ); ?>" class="regular-text" /></td>
 		</tr>
 
-		<tr class="tml-last-name-wrap">
+		<tr class="bthm-last-name-wrap">
 			<th><label for="last_name"><?php _e( 'Last Name', 'theme-my-login' ); ?></label></th>
 			<td><input type="text" name="last_name" id="last_name" value="<?php echo esc_attr( $profileuser->last_name ); ?>" class="regular-text" /></td>
 		</tr>
 
-		<tr class="tml-nickname-wrap">
+		<tr class="bthm-nickname-wrap">
 			<th><label for="nickname"><?php _e( 'Nickname', 'theme-my-login' ); ?> <span class="description"><?php _e( '(required)', 'theme-my-login' ); ?></span></label></th>
 			<td><input type="text" name="nickname" id="nickname" value="<?php echo esc_attr( $profileuser->nickname ); ?>" class="regular-text" /></td>
 		</tr>
 
-		<tr class="tml-display-name-wrap">
+		<tr class="bthm-display-name-wrap">
 			<th><label for="display_name"><?php _e( 'Display name publicly as', 'theme-my-login' ); ?></label></th>
 			<td>
 				<select name="display_name" id="display_name">
@@ -94,8 +94,8 @@ Theme My Login will always look in your theme's directory first, before using th
 
 		<h3><?php _e( 'Contact Info', 'theme-my-login' ); ?></h3>
 
-		<table class="tml-form-table">
-		<tr class="tml-user-email-wrap">
+		<table class="bthm-form-table">
+		<tr class="bthm-user-email-wrap">
 			<th><label for="email"><?php _e( 'E-mail', 'theme-my-login' ); ?> <span class="description"><?php _e( '(required)', 'theme-my-login' ); ?></span></label></th>
 			<td><input type="text" name="email" id="email" value="<?php echo esc_attr( $profileuser->user_email ); ?>" class="regular-text" /></td>
 			<?php
@@ -112,7 +112,7 @@ Theme My Login will always look in your theme's directory first, before using th
 			<?php endif; ?>
 		</tr>
 
-		<tr class="tml-user-url-wrap">
+		<tr class="bthm-user-url-wrap">
 			<th><label for="url"><?php _e( 'Website', 'theme-my-login' ); ?></label></th>
 			<td><input type="text" name="url" id="url" value="<?php echo esc_attr( $profileuser->user_url ); ?>" class="regular-text code" /></td>
 		</tr>
@@ -120,7 +120,7 @@ Theme My Login will always look in your theme's directory first, before using th
 		<?php
 			foreach ( wp_get_user_contact_methods() as $name => $desc ) {
 		?>
-		<tr class="tml-user-contact-method-<?php echo $name; ?>-wrap">
+		<tr class="bthm-user-contact-method-<?php echo $name; ?>-wrap">
 			<th><label for="<?php echo $name; ?>"><?php echo apply_filters( 'user_'.$name.'_label', $desc ); ?></label></th>
 			<td><input type="text" name="<?php echo $name; ?>" id="<?php echo $name; ?>" value="<?php echo esc_attr( $profileuser->$name ); ?>" class="regular-text" /></td>
 		</tr>
@@ -131,8 +131,8 @@ Theme My Login will always look in your theme's directory first, before using th
 
 		<h3><?php _e( 'About Yourself', 'theme-my-login' ); ?></h3>
 
-		<table class="tml-form-table">
-		<tr class="tml-user-description-wrap">
+		<table class="bthm-form-table">
+		<tr class="bthm-user-description-wrap">
 			<th><label for="description"><?php _e( 'Biographical Info', 'theme-my-login' ); ?></label></th>
 			<td><textarea name="description" id="description" rows="5" cols="30"><?php echo esc_html( $profileuser->description ); ?></textarea><br />
 			<span class="description"><?php _e( 'Share a little biographical information to fill out your profile. This may be shown publicly.', 'theme-my-login' ); ?></span></td>
@@ -145,7 +145,7 @@ Theme My Login will always look in your theme's directory first, before using th
 		</table>
 
 		<h3><?php _e( 'Account Management', 'theme-my-login' ); ?></h3>
-		<table class="tml-form-table">
+		<table class="bthm-form-table">
 		<tr id="password" class="user-pass1-wrap">
 			<th><label for="pass1"><?php _e( 'New Password', 'theme-my-login' ); ?></label></th>
 			<td>
@@ -188,7 +188,7 @@ Theme My Login will always look in your theme's directory first, before using th
 
 		<?php do_action( 'show_user_profile', $profileuser ); ?>
 
-		<p class="tml-submit-wrap">
+		<p class="bthm-submit-wrap">
 			<input type="hidden" name="action" value="profile" />
 			<input type="hidden" name="instance" value="<?php $template->the_instance(); ?>" />
 			<input type="hidden" name="user_id" id="user_id" value="<?php echo esc_attr( $current_user->ID ); ?>" />
